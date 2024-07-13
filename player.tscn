@@ -1,0 +1,76 @@
+[gd_scene load_steps=12 format=3 uid="uid://d3pqr7jb0ieme"]
+
+[ext_resource type="Script" path="res://player.gd" id="1_au1lj"]
+[ext_resource type="Texture2D" uid="uid://d4ioeoa2j0veq" path="res://sprites/player_idle.png" id="1_f2pve"]
+[ext_resource type="Texture2D" uid="uid://dqgksglysinso" path="res://sprites/player_strike.png" id="3_xbg8l"]
+[ext_resource type="Texture2D" uid="uid://dirswmnq45npy" path="res://sprites/player_walk_1.png" id="4_du6kh"]
+[ext_resource type="Texture2D" uid="uid://e2cagxkdh7bq" path="res://sprites/player_walk_2.png" id="5_f6r7l"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_b3lkw"]
+height = 64.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nmkfy"]
+size = Vector2(24, 5)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0difu"]
+atlas = ExtResource("4_du6kh")
+region = Rect2(0, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i4ihs"]
+atlas = ExtResource("5_f6r7l")
+region = Rect2(0, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bmdrq"]
+atlas = ExtResource("1_f2pve")
+region = Rect2(0, 0, 32, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pxhx1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_f2pve")
+}],
+"loop": true,
+"name": &"player_idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_xbg8l")
+}],
+"loop": false,
+"name": &"player_strike",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0difu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i4ihs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bmdrq")
+}],
+"loop": false,
+"name": &"player_walk",
+"speed": 10.0
+}]
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_au1lj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_b3lkw")
+
+[node name="CollisionShape2DSword" type="CollisionShape2D" parent="."]
+position = Vector2(20, -7.5)
+shape = SubResource("RectangleShape2D_nmkfy")
+disabled = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_pxhx1")
+animation = &"player_strike"
+autoplay = "player_idle"
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
