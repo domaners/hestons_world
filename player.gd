@@ -50,8 +50,8 @@ func update_animation(animation_name, set_lock):
 
 # Enables collisions on the sword, for attacking enemies
 func set_strike_collision():
-	$CollisionShape2DSword.set_deferred("disabled", false)
+	$CollisionShape2DSword.disabled = false
 
 func _on_animated_sprite_2d_animation_finished():
-	$CollisionShape2DSword.set_deferred("enabled", false)
+	$CollisionShape2DSword.disabled = true
 	animation_locked = false
