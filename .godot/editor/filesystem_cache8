@@ -1,10 +1,12 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1720860754
+::res://::1722066292
 icon.svg::CompressedTexture2D::114934493162646449::1720799574::1720799578::1::::<><>::
-player.gd::GDScript::-1::1720860593::0::1::::<>CharacterBody2D<>::
-player.tscn::PackedScene::9156518864365360860::1720860754::0::1::::<><>::res://player.gd<>uid://d4ioeoa2j0veq::::res://sprites/player_idle.png<>uid://dqgksglysinso::::res://sprites/player_strike.png
-test_level.tscn::PackedScene::9202083016145633628::1720860678::0::1::::<><>::uid://d3pqr7jb0ieme::::res://player.tscn<>uid://dd3o5qyade1qt::::res://sprites/ground_grass.png
-::res://sprites/::1720861327
+player.gd::GDScript::-1::1720863035::0::1::::<>CharacterBody2D<>::
+player.tscn::PackedScene::9156518864365360860::1722065933::0::1::::<><>::res://player.gd<>uid://d4ioeoa2j0veq::::res://sprites/player_idle.png<>uid://dqgksglysinso::::res://sprites/player_strike.png<>uid://dirswmnq45npy::::res://sprites/player_walk_1.png<>uid://e2cagxkdh7bq::::res://sprites/player_walk_2.png
+enemy.tscn::PackedScene::2440575431949617553::1722066280::0::1::::<><>::
+test_level.tscn::PackedScene::9202083016145633628::1722066292::0::1::::<><>::uid://d3pqr7jb0ieme::::res://player.tscn<>uid://dd3o5qyade1qt::::res://sprites/ground_grass.png<>uid://ba1h6ko2ci8j2::::res://enemy.tscn
+::res://sprites/::1722066489
+enemy-idle.png::CompressedTexture2D::9151159055323224690::1722066489::1722066491::1::::<><>::
 ground_grass.png::CompressedTexture2D::7428535648276056555::1720801179::1720801201::1::::<><>::
 player_idle.png::CompressedTexture2D::9212111456255763108::1720799712::1720799716::1::::<><>::
 player_strike.png::CompressedTexture2D::8295309463277916486::1720852192::1720852233::1::::<><>::
