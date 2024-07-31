@@ -5,12 +5,10 @@
 [ext_resource type="Texture2D" uid="uid://dqgksglysinso" path="res://sprites/player_strike.png" id="3_xbg8l"]
 [ext_resource type="Texture2D" uid="uid://dirswmnq45npy" path="res://sprites/player_walk_1.png" id="4_du6kh"]
 [ext_resource type="Texture2D" uid="uid://e2cagxkdh7bq" path="res://sprites/player_walk_2.png" id="5_f6r7l"]
+[ext_resource type="PackedScene" uid="uid://cu5kgpvb5n1rc" path="res://player_sword.tscn" id="6_5lxqa"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_b3lkw"]
 height = 64.0
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_nmkfy"]
-size = Vector2(24, 5)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0difu"]
 atlas = ExtResource("4_du6kh")
@@ -63,13 +61,11 @@ script = ExtResource("1_au1lj")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_b3lkw")
 
-[node name="CollisionShape2DSword" type="CollisionShape2D" parent="."]
-position = Vector2(20, -7.5)
-shape = SubResource("RectangleShape2D_nmkfy")
-
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_pxhx1")
 animation = &"player_strike"
 autoplay = "player_idle"
+
+[node name="PlayerSword" parent="." instance=ExtResource("6_5lxqa")]
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

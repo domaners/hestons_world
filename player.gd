@@ -11,6 +11,7 @@ var direction : Vector2 = Vector2()
 var animation_locked : bool = false
 
 func _physics_process(delta):
+	
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += gravity * delta
@@ -50,8 +51,8 @@ func update_animation(animation_name, set_lock):
 
 # Enables collisions on the sword, for attacking enemies
 func set_strike_collision():
-	$CollisionShape2DSword.disabled = false
+	$PlayerSword.process_mode = Node.PROCESS_MODE_ALWAYS 
 
 func _on_animated_sprite_2d_animation_finished():
-	$CollisionShape2DSword.disabled = true
+	$PlayerSword.process_mode = Node.PROCESS_MODE_DISABLED
 	animation_locked = false
