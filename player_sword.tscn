@@ -5,6 +5,6 @@ size = Vector2(14, 49)
 
 [node name="PlayerSword" type="CharacterBody2D" groups=["PlayerSword"]]
 
-[node name="CollisionShape2DSword" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2DSword" type="CollisionShape2D" parent="." groups=["PlayerSword"]]
 position = Vector2(17, -27.5)
 shape = SubResource("RectangleShape2D_pbteu")

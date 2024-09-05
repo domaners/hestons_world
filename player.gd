@@ -19,6 +19,7 @@ func _physics_process(delta):
 	# Handle jump.
 	if Input.is_action_just_pressed("BTN_A") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
+		update_animation("player_jump_up", true)
 	if Input.is_action_just_pressed("BTN_X") and is_on_floor():
 		update_animation("player_strike", true)
 		set_strike_collision()

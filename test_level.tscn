@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=4 uid="uid://d4ds70bi00w8k"]
+[gd_scene load_steps=7 format=4 uid="uid://d4ds70bi00w8k"]
 
 [ext_resource type="PackedScene" uid="uid://d3pqr7jb0ieme" path="res://player.tscn" id="1_5jnuu"]
 [ext_resource type="PackedScene" uid="uid://ba1h6ko2ci8j2" path="res://enemy.tscn" id="2_bwpbp"]
 [ext_resource type="Texture2D" uid="uid://c0che0wdfn4h" path="res://sprites/Tiles.png" id="3_qmvjj"]
+[ext_resource type="Texture2D" uid="uid://dby4cpmrd4rtg" path="res://sprites/Background.png" id="4_knaie"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_d6phv"]
 texture = ExtResource("3_qmvjj")
@@ -529,16 +530,27 @@ remote_path = NodePath("../../Camera2D")
 
 [node name="Enemy" parent="." instance=ExtResource("2_bwpbp")]
 position = Vector2(726, -101)
-lateral_speed = 100
 
 [node name="Enemy2" parent="." instance=ExtResource("2_bwpbp")]
 position = Vector2(2276, -128)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(1065, -87)
-zoom = Vector2(1.5, 1.5)
+zoom = Vector2(2.5, 2.5)
 process_callback = 0
 limit_bottom = 0
 position_smoothing_enabled = true
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+follow_viewport_enabled = true
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(2, 2)
+motion_mirroring = Vector2(10000, 10000)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(630, -273)
+texture = ExtResource("4_knaie")
+centered = false
