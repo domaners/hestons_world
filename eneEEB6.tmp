@@ -8,26 +8,35 @@ script/source = "extends CharacterBody2D
 @export var move_speed : float = 100.0
 @export var move_dir : Vector2 = Vector2()
 @export var gravity_speed : int = 350
-@export var lateral_speed : int = 150
+@export var lateral_speed : int = 1000
 
 var moveRight = false
-var logCount = 0
 
 func _ready():
-	velocity.x = -lateral_speed
+	pass
 	
 func _physics_process(delta):
 	
-	if moveRight == true:
-		velocity.x = lateral_speed
-	else:
-		velocity.x = -lateral_speed
-	
 	velocity.y += gravity_speed * delta
+	
+	if moveRight:
+		velocity.x += lateral_speed * delta
+	else:
+		velocity.x += -(lateral_speed * delta)
 			
-	if move_and_slide() && is_on_wall():
+	if move_and_slide() and is_on_wall_only():
 		moveRight = !moveRight
-		print(\"CHANGE MOVERIGHT: \" + str(moveRight))
+		print (\"ENEMY HIT A WALL \" + str(moveRight) + \" \" + str(velocity.x))
+	
+	#while(collision):
+		#var collider = collision.get_collider()
+		#
+		#if collider is TileMap:
+			#if !moveRight:
+				#moveRight = true
+			#else:
+				#moveRight = false
+			#break
 "
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_h30du"]
