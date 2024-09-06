@@ -15,25 +15,25 @@ func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += gravity * delta
+	elif !animation_locked:
+		update_animation("player_idle", false)
+	
 	
 	# Handle jump.
-	if Input.is_action_just_pressed("BTN_A") and is_on_floor():
+	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
-		update_animation("player_jump_up", true)
-	if Input.is_action_just_pressed("BTN_X") and is_on_floor():
+	elif Input.is_action_just_pressed("Ctrl") and is_on_floor():
 		update_animation("player_strike", true)
 		set_strike_collision()
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
-	direction = Input.get_vector("DPAD_LEFT", "DPAD_RIGHT", "ui_up", "ui_down")
+	direction = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 	if direction.x != 0:
 		velocity.x = direction.x * SPEED
-		update_animation("player_walk", false)
+		update_animation("player_walk", true)
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
-		if !animation_locked:
-			update_animation("player_idle", false)
 
 	move_and_slide()
 	update_facing_direction()
@@ -41,10 +41,8 @@ func _physics_process(delta):
 func update_facing_direction():
 	if direction.x < 0:
 		animated_sprite.flip_h = true
-		$PlayerSword.position.x = -42.0
 	elif direction.x > 0:
 		animated_sprite.flip_h = false
-		$PlayerSword.position.x = 0
 
 func update_animation(animation_name, set_lock):
 	if(!animation_locked):

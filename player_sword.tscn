@@ -1,10 +1,10 @@
 [gd_scene load_steps=2 format=3 uid="uid://cu5kgpvb5n1rc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pbteu"]
-size = Vector2(14, 49)
+size = Vector2(22, 5)
 
 [node name="PlayerSword" type="CharacterBody2D" groups=["PlayerSword"]]
 
-[node name="CollisionShape2DSword" type="CollisionShape2D" parent="." groups=["PlayerSword"]]
-position = Vector2(17, -27.5)
+[node name="CollisionShape2DSword" type="CollisionShape2D" parent="."]
+position = Vector2(21, -7.5)
 shape = SubResource("RectangleShape2D_pbteu")
