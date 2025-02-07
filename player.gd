@@ -26,6 +26,7 @@ func _physics_process(delta):
 		velocity.y = JUMP_VELOCITY
 		update_animation("player_jump_up", true)
 	if Input.is_action_just_pressed("BTN_X") and is_on_floor():
+		$AudioSwordSwoosh.play()
 		update_animation("player_strike", true)
 		set_strike_collision()
 

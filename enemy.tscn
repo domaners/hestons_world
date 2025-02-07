@@ -36,6 +36,10 @@ func _physics_process(delta):
 		if(lastCollision.get_collider().is_in_group(\"PlayerSword\")):
 			print(\"HIT PLAYER SWORD\")
 			killEnemy()
+		elif(lastCollision.get_collider().is_in_group(\"Player\")):
+			print(\"HIT PLAYER - LOSE 10 HEALTH\")
+			decreasePlayerHealth(10)
+			
 		moveRight = !moveRight
 		# update_facing_direction()
 		animated_sprite.flip_h = moveRight
@@ -50,6 +54,8 @@ func killEnemy():
 	Global.playerScore += available_score
 	queue_free()
 	
+func decreasePlayerHealth(amount):
+	Global.playerHealth -= amount
 "
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2ctay"]
