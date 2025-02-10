@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://c07m3c8m0i438"]
+
+[ext_resource type="Script" path="res://pickup.gd" id="1_nfdxl"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1ijc7"]
+
+[sub_resource type="Gradient" id="Gradient_mu7eu"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_uyayo"]
+gradient = SubResource("Gradient_mu7eu")
+
+[node name="Pickup" type="CharacterBody2D"]
+script = ExtResource("1_nfdxl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_1ijc7")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -16.0
+offset_top = -16.0
+offset_right = 16.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_uyayo")
+expand_mode = 1

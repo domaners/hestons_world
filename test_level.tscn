@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://d4ds70bi00w8k"]
+[gd_scene load_steps=12 format=4 uid="uid://d4ds70bi00w8k"]
 
 [ext_resource type="PackedScene" uid="uid://d3pqr7jb0ieme" path="res://player.tscn" id="1_5jnuu"]
 [ext_resource type="Script" path="res://label.gd" id="1_dn6im"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://c0che0wdfn4h" path="res://sprites/Tiles.png" id="3_qmvjj"]
 [ext_resource type="Script" path="res://pause_label.gd" id="3_r7k56"]
 [ext_resource type="Texture2D" uid="uid://dby4cpmrd4rtg" path="res://sprites/Background.png" id="4_knaie"]
+[ext_resource type="PackedScene" uid="uid://c07m3c8m0i438" path="res://pickup.tscn" id="9_dd84n"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_d6phv"]
 texture = ExtResource("3_qmvjj")
@@ -610,6 +611,9 @@ position = Vector2(726, -101)
 
 [node name="Enemy2" parent="." instance=ExtResource("2_bwpbp")]
 position = Vector2(2276, -128)
+
+[node name="Pickup" parent="." instance=ExtResource("9_dd84n")]
+position = Vector2(1197, -100)
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 

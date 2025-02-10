@@ -2,6 +2,7 @@ extends Node
 
 var playerScore : int = 0
 var playerHealth : int = 100
+var playerPickups : int = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
