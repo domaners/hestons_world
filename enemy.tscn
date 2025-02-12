@@ -52,7 +52,7 @@ func update_animation(animation_name, set_lock):
 
 func killEnemy():
 	Global.playerScore += available_score
-	#self.get_parent().generate_pickup(self.position)
+	self.get_parent().generate_pickup(self.position)
 	queue_free()
 	
 func decreasePlayerHealth(amount):

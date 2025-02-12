@@ -12,10 +12,6 @@ var animation_locked : bool = false
 var is_paused : bool = false
 
 func _physics_process(delta):
-	
-	# Handle pausing
-	if Input.is_action_just_pressed("BTN_START"):
-		get_tree().paused = true
 		
 	# Add the gravity.
 	if not is_on_floor():
@@ -43,6 +39,11 @@ func _physics_process(delta):
 
 	move_and_slide()
 	update_facing_direction()
+	
+	# Kill the player if they fall off screen
+	if(self.position.y > 0):
+		Global.playerHealth = 0
+		print("FALLEN")
 	
 func update_facing_direction():
 	if direction.x < 0:

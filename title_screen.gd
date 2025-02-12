@@ -8,7 +8,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("BTN_START"):
+	if Input.is_action_just_pressed("BTN_A"):
 		Global.playerScore = 0
 		Global.playerHealth = 100
 		get_tree().change_scene_to_file("res://test_level.tscn")

@@ -8,10 +8,9 @@ func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 
-	move_and_slide()
-	
-	var lastCollision = get_last_slide_collision()	
-	if(lastCollision.get_collider().is_in_group("Player")):
-		print("GOT PICKUP")
-		Global.playerPickups += 1
-		queue_free()
+	if move_and_slide() && is_on_wall():
+		var lastCollision = get_last_slide_collision()	
+		if(lastCollision.get_collider().is_in_group("Player")):
+			print("GOT PICKUP")
+			Global.playerPickups += 1
+			queue_free()

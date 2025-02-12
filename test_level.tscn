@@ -556,6 +556,7 @@ sources/0 = SubResource("TileSetAtlasSource_d6phv")
 script = ExtResource("1_w1cs0")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+process_mode = 3
 
 [node name="Label" type="Label" parent="CanvasLayer"]
 process_mode = 3
