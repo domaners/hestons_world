@@ -14,8 +14,8 @@ script = ExtResource("1_y3x3f")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer"]
-offset_left = 407.0
-offset_top = 269.0
-offset_right = 726.0
-offset_bottom = 382.0
-text = "ADAM SMADAM"
+offset_left = 380.0
+offset_top = 200.0
+offset_right = 699.0
+offset_bottom = 313.0
+text = "DO A GAME"

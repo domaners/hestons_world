@@ -1,14 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://c07m3c8m0i438"]
+[gd_scene load_steps=4 format=3 uid="uid://c07m3c8m0i438"]
 
 [ext_resource type="Script" path="res://pickup.gd" id="1_nfdxl"]
+[ext_resource type="Texture2D" uid="uid://cxfm1i1prjrak" path="res://sprites/Pickup_sprite_01.png" id="2_id8ak"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_emmv2"]
 size = Vector2(16, 16)
-
-[sub_resource type="Gradient" id="Gradient_mu7eu"]
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_uyayo"]
-gradient = SubResource("Gradient_mu7eu")
 
 [node name="Pickup" type="CharacterBody2D"]
 script = ExtResource("1_nfdxl")
@@ -29,5 +25,5 @@ offset_right = 8.0
 offset_bottom = 8.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = SubResource("GradientTexture2D_uyayo")
+texture = ExtResource("2_id8ak")
 expand_mode = 1

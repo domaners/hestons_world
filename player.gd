@@ -36,7 +36,10 @@ func _physics_process(delta):
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		if !animation_locked:
 			update_animation("player_idle", false)
-
+	
+	
+	# STUB: Can we handle collisions with all objects from here and handle input contextually based on proximity to collidable objects?
+	
 	move_and_slide()
 	update_facing_direction()
 	
