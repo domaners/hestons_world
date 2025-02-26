@@ -37,11 +37,12 @@ func _physics_process(delta):
 		if !animation_locked:
 			update_animation("player_idle", false)
 	
+	# Handle interactive items such as chests
+	if(Input.is_action_just_pressed("BTN_B")):
+		handleInteractiveItems()
 	
-	# STUB: Can we handle collisions with all objects from here and handle input contextually based on proximity to collidable objects?
-	
-	move_and_slide()
-	update_facing_direction()
+	if(move_and_slide()):
+		update_facing_direction()
 	
 	# Kill the player if they fall off screen
 	if(self.position.y > 0):
@@ -68,3 +69,13 @@ func set_strike_collision():
 func _on_animated_sprite_2d_animation_finished():
 	$PlayerSword.process_mode = Node.PROCESS_MODE_DISABLED
 	animation_locked = false
+
+func handleInteractiveItems():
+	
+	if(move_and_slide()):
+		var lastCollision = get_last_slide_collision()
+			
+		if(lastCollision.get_collider().is_in_group("Chest")):
+			var thisCollidedInstance = instance_from_id(lastCollision.get_collider().get_instance_id())
+			thisCollidedInstance.set_deferred("chestOpen", true)
+			Global.playerPickups += thisCollidedInstance.pickupVal

@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://b871f5s8askd5"]
+
+[ext_resource type="Script" path="res://bouncing_enemy.gd" id="1_pe8xi"]
+[ext_resource type="Texture2D" uid="uid://de3ae0bwla5wk" path="res://sprites/enemy_placeholder.png" id="1_qjvpu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6n8hq"]
+size = Vector2(32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cwa65"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_qjvpu")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="BouncingEnemy" type="CharacterBody2D"]
+script = ExtResource("1_pe8xi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_6n8hq")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_cwa65")
