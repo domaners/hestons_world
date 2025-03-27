@@ -34,16 +34,16 @@ func _physics_process(delta):
 	if move_and_slide() && is_on_wall():
 		var lastCollision = get_last_slide_collision()
 		if(lastCollision.get_collider().is_in_group(\"PlayerSword\")):
-			print(\"HIT PLAYER SWORD\")
+			# print(\"HIT PLAYER SWORD\")
 			killEnemy()
 		elif(lastCollision.get_collider().is_in_group(\"Player\")):
-			print(\"HIT PLAYER - LOSE 10 HEALTH\")
+			# print(\"HIT PLAYER - LOSE 10 HEALTH\")
 			decreasePlayerHealth(10)
 			
 		moveRight = !moveRight
 		# update_facing_direction()
 		animated_sprite.flip_h = moveRight
-		print(\"CHANGE MOVERIGHT: \" + str(moveRight))
+		# print(\"CHANGE MOVERIGHT: \" + str(moveRight))
 
 func update_animation(animation_name, set_lock):
 	if(!animation_locked):
