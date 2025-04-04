@@ -183,6 +183,7 @@ sprite_frames = SubResource("SpriteFrames_pxhx1")
 animation = &"player_jump_up"
 
 [node name="PlayerSword" parent="." instance=ExtResource("6_5lxqa")]
-position = Vector2(1, 25)
+position = Vector2(1, 20)
+safe_margin = 1.0
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

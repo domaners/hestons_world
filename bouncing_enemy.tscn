@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://b871f5s8askd5"]
 
-[ext_resource type="Script" path="res://bouncing_enemy.gd" id="1_pe8xi"]
-[ext_resource type="Texture2D" uid="uid://de3ae0bwla5wk" path="res://sprites/enemy_placeholder.png" id="1_qjvpu"]
+[ext_resource type="Script" uid="uid://c44q5pcovkxjy" path="res://bouncing_enemy.gd" id="1_pe8xi"]
+[ext_resource type="Texture2D" uid="uid://dawtsgllqrqqh" path="res://sprites/enemy_placeholder.png" id="1_qjvpu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6n8hq"]
 size = Vector2(32, 32)
@@ -25,3 +25,7 @@ shape = SubResource("RectangleShape2D_6n8hq")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_cwa65")
+
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]
+position = Vector2(1.43051e-06, 1.43051e-06)
+scale = Vector2(1.6, 1.6)
