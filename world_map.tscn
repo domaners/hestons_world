@@ -234,7 +234,7 @@ sources/0 = SubResource("TileSetAtlasSource_4ojr4")
 [node name="WorldMap" type="Node2D"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(630, 191)
+position = Vector2(620, 186)
 scale = Vector2(0.3, 0.3)
 zoom = Vector2(1.5, 1.5)
 process_callback = 0
@@ -248,7 +248,7 @@ tile_map_data = PackedByteArray("AADn//H/AAACAAMAAADn//L/AAACAAMAAADn//P/AAACAAM
 tile_set = SubResource("TileSet_vv781")
 
 [node name="TopDownPlayer" parent="." instance=ExtResource("1_r63r8")]
-position = Vector2(630, 191)
+position = Vector2(620, 186)
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="TopDownPlayer"]
 remote_path = NodePath("../../Camera2D")

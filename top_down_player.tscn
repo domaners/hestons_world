@@ -4,8 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://bkbudapqn2p4h" path="res://sprites/heston sprite 003_001.png" id="1_qjmy6"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qjmy6"]
-radius = 20.0
-height = 64.0
+radius = 16.6667
+height = 40.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_by3vp"]
 animations = [{
@@ -28,7 +28,7 @@ scale = Vector2(0.3, 0.3)
 script = ExtResource("1_by3vp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(5, 0)
+position = Vector2(5, 10)
 shape = SubResource("CapsuleShape2D_qjmy6")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

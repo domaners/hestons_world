@@ -80,4 +80,8 @@ func handleInteractiveItems():
 		if(lastCollision.get_collider().is_in_group("Chest")):
 			var thisCollidedInstance = instance_from_id(lastCollision.get_collider().get_instance_id())
 			thisCollidedInstance.set_deferred("chestOpen", true)
-			Global.playerPickups += thisCollidedInstance.pickupVal
+			
+			# Where items are allocated to player's inventory based on the contents of the chest
+			# Using if's for this is unsustainable but will do for now
+			if(thisCollidedInstance.chestContentName == "Wood"):
+				Global.playerPickup_Wood += thisCollidedInstance.chestContentQuantity

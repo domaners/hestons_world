@@ -52,7 +52,6 @@ func update_animation(animation_name, set_lock):
 
 func killEnemy():
 	enemyHealth -= 1
-	Global.playerScore += available_score
 	if(enemyHealth <= 0):
 		self.get_parent().generate_pickup(self.position)
 		queue_free()

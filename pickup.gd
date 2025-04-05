@@ -12,5 +12,5 @@ func _physics_process(delta: float) -> void:
 		var lastCollision = get_last_slide_collision()	
 		if(lastCollision.get_collider().is_in_group("Player")):
 			print("GOT PICKUP")
-			Global.playerPickups += 1
+			Global.playerPickup_Wood += 1
 			queue_free()

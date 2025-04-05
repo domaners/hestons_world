@@ -2,7 +2,7 @@ extends Node
 
 var playerScore : int = 0
 var playerHealth : int = 100
-var playerPickups : int = 0
+var playerPickup_Wood : int = 0
 var gamePaused : int = false
 
 # Map globals

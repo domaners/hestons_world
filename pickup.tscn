@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://c07m3c8m0i438"]
 
-[ext_resource type="Script" path="res://pickup.gd" id="1_nfdxl"]
-[ext_resource type="Texture2D" uid="uid://cxfm1i1prjrak" path="res://sprites/Pickup_sprite_01.png" id="2_id8ak"]
+[ext_resource type="Script" uid="uid://smwb2ukbbwtk" path="res://pickup.gd" id="1_nfdxl"]
+[ext_resource type="Texture2D" uid="uid://y614c3d4okae" path="res://sprites/wood_pickup.png" id="2_weqpt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_emmv2"]
 size = Vector2(16, 16)
@@ -25,5 +25,5 @@ offset_right = 8.0
 offset_bottom = 8.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_id8ak")
+texture = ExtResource("2_weqpt")
 expand_mode = 1
