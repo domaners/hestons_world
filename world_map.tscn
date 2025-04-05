@@ -266,8 +266,12 @@ tile_set = SubResource("TileSet_vv781")
 [node name="Forest_EntryPoint" parent="." groups=["map_entry_point"] instance=ExtResource("3_4ojr4")]
 position = Vector2(701, 188)
 
-[node name="StageNameLabel" type="Label" parent="."]
-offset_right = 40.0
-offset_bottom = 23.0
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="StageNameLabel" type="Label" parent="CanvasLayer"]
+offset_left = 6.0
+offset_top = 4.0
+offset_right = 102.0
+offset_bottom = 27.0
 text = "AAAAAAAAA"
 script = ExtResource("4_vv781")
